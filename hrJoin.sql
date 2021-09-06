@@ -5,6 +5,11 @@ CREATE TABLE palette_a (
     color VARCHAR2 (100) NOT NULL
 );
 
+--CREATE TABLE testNumber (
+--    id NUMBER(4) PRIMARY KEY,
+--    color VARCHAR2 (100) NOT NULL
+--);
+
 CREATE TABLE palette_b (
     id INT PRIMARY KEY,
     color VARCHAR2 (100) NOT NULL
@@ -36,6 +41,10 @@ VALUES (3, 'Cyan');
 INSERT INTO palette_b (id, color)
 VALUES (4, 'Brown');
 
+--INSERT INTO palette_b (id, color)
+--VALUES ('6', 'Brown666');
+
+--DELETE FROM palette_b b WHERE b.id = 6;
 -- ////////////////////////////
 
 -- 1. InnerJoin 
@@ -135,9 +144,7 @@ INNER JOIN employees e2 ON
     e1.employee_id > e2.employee_id
     AND e1.hire_date = e2.hire_date
 ORDER BY  
-   e1.hire_date DESC,
-   employee1, 
-   employee2;
+   e1.hire_date DESC, employee1, employee2;
 
 -- 입사일에 중복이 없을경우, 위의 쿼리에서 누락된다.
 select * from employees;
